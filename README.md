@@ -96,7 +96,41 @@ return값을 반환합니다
 만약 10번의
 주소는 @GetMapping("/aaa/{f}/{s}") 에서
 처음으로 돌아가
-@GetMapping("/test) 으로 하여 간단하게 돌려보면
+@GetMapping("/aaa) 으로 하여 간단하게 돌려보면
+![화면 캡처 2024-11-11 150554](https://github.com/user-attachments/assets/146944fc-6fde-47cf-ad8e-21c999d0cf2b)
+![화면 캡처 2024-11-11 150612](https://github.com/user-attachments/assets/653bd97e-55be-4615-aed1-7e2a5182f698)
+
+이렇게 작동합니다 즉 @GetMapping("/aaa) 에서
+("/aaa)의 aaa는 사용자가 원하는것으로 수정할수가 있고 그것과 실행한뒤 같은 주소를 넣었을때에
+원하는 창을 뛰울수 있습니다
+현재는 aaa밖에 적은게 없기 때문에
+http://localhost:8080/aaa 로 접속하면 aaa가 나오는것을 볼수 있습니다
+
+튜터님께서 예시를 알려주셨지만
+
+@GetMapping("/aaa")
+public String test() {
+}
+
+위 코드에서 test() 의 () 안에는 많은 조건?을 넣을수 있습니다
+예시로 보여주셨던것은
+
+    @GetMapping("/aaa/{f}/{s}")
+    public String test(@PathVariable Long f, @PathVariable Long s) {
+        return "aaa";
+    }
+}
+
+이렇게 넣음으로써
+사용자는 두가지 Long 타입의 f, s을 입력할 수 있게 되었습니다
+이번에는 aaa와  f / s를 넣을수있게 하였기 때문에 주소창에
+http://localhost:8080/aaa/6/2 
+( 여기서 6 / 2 는 원하는 수를 넣으면 됩니다)
+
+이렇게 창을 띄울 수 있게 되었습니다.
+
+이 뿐만 아니라 test안에 원하는 조건들을 넣을수 있습니다
+
 
 
 
