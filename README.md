@@ -69,25 +69,34 @@ Spring Boot와 함께 사용될 때, Spring Web은 내장 Tomcat, Jetty 또는 U
 
 그 다음으로 10번째 줄의
 @GetMapping을 알아보았습니다
+
 @GetMapping : @RequestMapping(method = RequestMethod.GET) 의 축약형으로
 주로 데이터를 조회할 때 사용됩니다
 
 스프링부트에서는 어떤 HTTP 메서드를 사용할지에 따라 RequestMapping 어노테이션을 아래의 어노테이션으로 구분해서 제공합니다.
-RequestMapping 어노테이션으로 사용가능하지만, 목적에 따라 아래 어노테이션으로 대체사용이 가능합니다
+RequestMapping 어노테이션으로 사용가능하지만, 
+목적에 따라 아래 어노테이션으로 대체사용이 가능합니다
 
-@GetMapping : GET 요청을 하는 API의 어노테이션.
-데이터를 가져올 때 사용한다.
-@PostMapping : POST 요청을 하는 API의 어노테이션
-데이터를 게시할 때 사용한다.
-@PutMapping : PUT 요청을 하는 API의 어노테이션
-데이터를 수정할 때 사용한다.
-@DeleteMapping : DELETE 요청을 하는 API의 어노테이션
-데이터를 삭제할 때 사용한다.
-@PatchMapping : PATCH 요청을 하는 API의 어노테이션
-데이터를 수정할 때 사용한다.
 
-주소는 @GetMapping("/aaa/{f}/{s}") 으로 설정해놓았기 떄문에
+* @GetMapping : GET 요청을 하는 API의 어노테이션.
+  데이터를 가져올 때 사용한다.
+  
+* @PostMapping : POST 요청을 하는 API의 어노테이션
+  데이터를 게시할 때 사용한다.
+
+* @PutMapping : PUT 요청을 하는 API의 어노테이션
+  데이터를 수정할 때 사용한다.
+
+* @DeleteMapping : DELETE 요청을 하는 API의 어노테이션
+  데이터를 삭제할 때 사용한다.
+
+* @PatchMapping : PATCH 요청을 하는 API의 어노테이션
+  데이터를 수정할 때 사용한다.
+
+
+주소는 @GetMapping("/aaa/{f}/{s}") 으로 설정해놓았기 때문에 
 http://localhost:8080/aaa/f/s가 되며
+
 메서드는 /aaa/{f}/{s}에서 f와 s의 값을 가져와 Long 타입의 변수로 전달합니다
 여기서 주소창에 입력을 할 때에
 f / s 는 사용자가 적을 수 있으며 12 ~ 16번의 코드가 실행(계산) 된 후에
@@ -97,6 +106,7 @@ return값을 반환합니다
 주소는 @GetMapping("/aaa/{f}/{s}") 에서
 처음으로 돌아가
 @GetMapping("/aaa) 으로 하여 간단하게 돌려보면
+
 ![화면 캡처 2024-11-11 150554](https://github.com/user-attachments/assets/146944fc-6fde-47cf-ad8e-21c999d0cf2b)
 ![화면 캡처 2024-11-11 150612](https://github.com/user-attachments/assets/653bd97e-55be-4615-aed1-7e2a5182f698)
 
@@ -128,10 +138,7 @@ http://localhost:8080/aaa/6/2
 ( 여기서 6 / 2 는 원하는 수를 넣으면 됩니다)
 
 이렇게 창을 띄울 수 있게 되었습니다.
-
 이 뿐만 아니라 test안에 원하는 조건들을 넣을수 있습니다
-
-
 
 
 
